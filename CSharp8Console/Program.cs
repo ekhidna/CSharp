@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using CSharp8Console.Interfaces;
 using System;
 using System.IO;
+using CSharp8Console.Chapter5;
 
 namespace CSharp8Console
 {
@@ -189,6 +190,11 @@ namespace CSharp8Console
             Console.WriteLine("Number return By Exp function with out parameter should be 10");
             Console.WriteLine(zzz);
 
+
+            Person Bob = new Person();
+            (string, int) fruits = Bob.GetFruit();
+            Console.WriteLine($"Bob got {fruits.Item2} {fruits.Item1}.");
+
             logger.LogDebug("All done!");
 
         }
@@ -246,6 +252,8 @@ namespace CSharp8Console
             xxx = 5;
             xxx += xxx;
         }
+
+        
     }
 }
    
