@@ -57,8 +57,13 @@ namespace CSharp8Console.Chapter5
 
         public (string Name, int Number) GetNamedFruit()
         {
-            return (Name: "Apples", Number: 5);
+            return (Name:"Oranges", Number:7);
         }
+
+        //public (string Name, int Number) GetNamedFruit()
+        //{
+        //    return (Name: "Apples", Number: 5);
+        //}
 
         public string SayHello()
         {

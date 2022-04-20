@@ -4,6 +4,7 @@ using CSharp8Console.Interfaces;
 using System;
 using System.IO;
 using CSharp8Console.Chapter5;
+using System.Collections.Generic;
 
 namespace CSharp8Console
 {
@@ -191,9 +192,22 @@ namespace CSharp8Console
             Console.WriteLine(zzz);
 
 
-            Person Bob = new Person();
+            //Person Bob = new Person();
+            Person Bob = new Person("Bob", "Mars");
+            Person Joao = new Person("Joao", "Earth");
+            Person Olga = new Person("Olga", "Earth");
+            //List<Person> Filhos = new List<Person>{  };
+            Bob.Children = new List<Person>() { Joao, Olga };
+            
             (string, int) fruits = Bob.GetFruit();
             Console.WriteLine($"Bob got {fruits.Item2} {fruits.Item1}.");
+            (string Name, int Number) fruit = Bob.GetNamedFruit();
+            Console.WriteLine($"Bob also got {fruit.Number} {fruit.Name}");
+
+            var thing1 = ("Neville", 4);
+            Console.WriteLine($"{thing1.Item1} has {thing1.Item2} children.");
+            var thing2 = (Bob.Name, Bob.Children.Count);
+            Console.WriteLine($"{thing2.Name} has {thing2.Count} children.");
 
             logger.LogDebug("All done!");
 
